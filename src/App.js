@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar.jsx";
 import React, { useEffect, useState } from "react";
 import { Characteres } from "./components/Characteres";
 import Paginacion from "./components/Paginacion";
-
+// import ExtraInfo from "./components/extraInfo/ExtraInfo";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [info, setinfo] = useState({});
@@ -39,6 +39,7 @@ function App() {
           onPrevios={onPrevios}
           onNext={onNext}
         />
+
         <Characteres characteres={characters} />
         <Paginacion
           prev={info.prev}

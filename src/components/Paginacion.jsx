@@ -8,6 +8,7 @@ const Paginacion = ({ prev, next, onPrevios, onNext }) => {
     onNext();
     window.scrollTo(0, 0);
   };
+  console.log(prev);
   return (
     <nav>
       <ul className="pagination">
