@@ -20,7 +20,24 @@ h5.card-title {
   margin-block-end: 1rem;
   margin-block-start: 1rem;
 }
-
+.searchbar {
+  display: flex;
+  justify-content: center;
+}
+.search {
+  --color: rgb(24, 122, 122);
+  font-family: inherit;
+  display: inline-block;
+  width: 20rem;
+  line-height: 2.5em;
+  overflow: hidden;
+  font-size: 13px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+}
 img {
   max-width: 300px;
   max-height: 300px;

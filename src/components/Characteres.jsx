@@ -4,13 +4,15 @@ export const Characteres = ({ characteres = [] }) => {
   const [Query, setQuery] = useState("");
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        className="search"
-        onChange={(e) => setQuery(e.target.value)}
-      />
+    <div className="all">
+      <div className="searchbar">
+        <input
+          type="text"
+          placeholder="Search for name..."
+          className="search"
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </div>
       <div className="info">
         {characteres
           .filter((pjs) => pjs.name.toLowerCase().includes(Query))
