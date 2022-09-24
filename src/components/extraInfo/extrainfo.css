@@ -1,0 +1,13 @@
+.All {
+  color: white;
+}
+
+h2 {
+  padding-left: 1rem;
+  width: 50%;
+}
+
+.imagen {
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}

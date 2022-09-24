@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./characteres.css";
+import { Link } from "react-router-dom";
 export const Characteres = ({ characteres = [] }) => {
   // Creamos un estado para que guarde lo que escribimos en el input
   const [Query, setQuery] = useState("");
@@ -53,6 +54,9 @@ export const Characteres = ({ characteres = [] }) => {
                   <p>
                     <b>Origin:</b> {item.origin.name}
                   </p>
+                  <Link to={`/episodes/${item.id}`}>
+                    <p style={{ color: "blue" }}>About episode</p>
+                  </Link>
                 </div>
               </div>
             </div>

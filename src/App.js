@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar.jsx";
 import React, { useEffect, useState } from "react";
 import { Characteres } from "./components/Characteres";
 import Paginacion from "./components/Paginacion";
-// import ExtraInfo from "./components/extraInfo/ExtraInfo";
+import { Route, Routes } from "react-router-dom";
+import ExtraInfo from "./components/extraInfo/ExtraInfo";
 function App() {
   //Creamos dos Estados uno que sean los pjs y otra que sea la informacion si de la sgte pag
   const [characters, setCharacters] = useState([]);
@@ -34,27 +35,39 @@ function App() {
 
   return (
     <>
-      {/* Colocamos el componente NavBar con el Titulo */}
       <Navbar brand={"Rick And Morty"} />
-      {/* Hacemos el div donde ira toda la info */}
-      <div className="container nt-5">
-        {/* Colocamos la Paginacion pasandole por props el  Info(prev, next), Funciones(onPrevios y onNext) */}
-        <Paginacion
-          prev={info.prev}
-          next={info.next}
-          onPrevios={onPrevios}
-          onNext={onNext}
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <div className="container nt-5">
+              {/* Colocamos la Paginacion pasandole por props el  Info(prev, next), Funciones(onPrevios y onNext) */}
+              <Paginacion
+                prev={info.prev}
+                next={info.next}
+                onPrevios={onPrevios}
+                onNext={onNext}
+              />
+              {/* Colocamos el componente characteres que mostrara en pantalla todos los pjs */}
+              <Characteres characteres={characters} />
+              {/* otra Paginacion mas para que haya uno abajo */}
+              <Paginacion
+                prev={info.prev}
+                next={info.next}
+                onPrevios={onPrevios}
+                onNext={onNext}
+              />
+              {/* Colocamos el componente NavBar con el Titulo */}
+              {/* Hacemos el div donde ira toda la info */}
+            </div>
+          }
+        ></Route>
+        <Route
+          path={`/episodes/:number`}
+          element={<ExtraInfo characters={characters} />}
         />
-        {/* Colocamos el componente characteres que mostrara en pantalla todos los pjs */}
-        <Characteres characteres={characters} />
-        {/* otra Paginacion mas para que haya uno abajo */}
-        <Paginacion
-          prev={info.prev}
-          next={info.next}
-          onPrevios={onPrevios}
-          onNext={onNext}
-        />
-      </div>
+      </Routes>
     </>
   );
 }

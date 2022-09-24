@@ -5,6 +5,7 @@ div.info {
   margin-top: 0.5rem;
   justify-items: center;
 }
+
 div.card {
   width: 300px;
   height: 600px;
@@ -15,15 +16,18 @@ div.card {
   font-size: 25px;
   color: beige;
 }
+
 h5.card-title {
   font-size: 1.5rem;
   margin-block-end: 1rem;
   margin-block-start: 1rem;
 }
+
 .searchbar {
   display: flex;
   justify-content: center;
 }
+
 .search {
   --color: rgb(24, 122, 122);
   font-family: inherit;
@@ -38,7 +42,8 @@ h5.card-title {
   border-radius: 6px;
   position: relative;
 }
-img {
+
+.image {
   max-width: 300px;
   max-height: 300px;
   border-radius: 0.5rem;
@@ -46,6 +51,7 @@ img {
   animation-name: reverse;
   animation-duration: 1s;
 }
+
 .moreinfo {
   max-width: 300px;
   position: absolute;
@@ -56,28 +62,34 @@ img {
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
+
 @keyframes move {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(100%);
   }
 }
+
 @keyframes reverse {
   0% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(0);
   }
 }
+
 @media (max-width: 650px) {
   div.card {
     display: flex;
     flex-direction: column;
     max-width: max-content;
   }
+
   h5.card-title {
     max-width: fit-content;
   }
