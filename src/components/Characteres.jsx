@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import "./characteres.css";
 export const Characteres = ({ characteres = [] }) => {
+  // Creamos un estado para que guarde lo que escribimos en el input
   const [Query, setQuery] = useState("");
 
   return (
     <div className="all">
       <div className="searchbar">
+        {/* el input donde nosotros podemos buscar por nombre */}
         <input
           type="text"
           placeholder="Search for name..."
           className="search"
+          //Creamos el evento que cuando cambie el input guardemos eso en dentro del setQuery
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
       <div className="info">
+        {/* hacemos el filtro por nombre */}
         {characteres
           .filter((pjs) => pjs.name.toLowerCase().includes(Query))
+          // hacemos un map de todos los personajes que vamos a mostrar en pantalla
           .map((item, index) => (
             <div key={index} className="col">
               <div className="card">

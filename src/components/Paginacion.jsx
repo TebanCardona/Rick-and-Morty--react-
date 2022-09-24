@@ -1,6 +1,7 @@
 import React from "react";
 import "./paginacion.css";
 const Paginacion = ({ prev, next, onPrevios, onNext }) => {
+  // Creamos las funciones que pasan de pagina
   const handlePrevious = () => {
     onPrevios();
   };
@@ -8,11 +9,11 @@ const Paginacion = ({ prev, next, onPrevios, onNext }) => {
     onNext();
     window.scrollTo(0, 0);
   };
-  console.log(prev);
   return (
     <nav>
       <ul className="pagination">
         {" "}
+        {/* si prev existe lo mostramos en pantalla igual que next le colocamos un listener cuando se haga click para poder cambiar de pag */}
         {prev ? (
           <li className="page-item">
             <button className="page-link" onClick={handlePrevious}>
